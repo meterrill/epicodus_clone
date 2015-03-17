@@ -3,4 +3,13 @@ class Lesson < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :text, :presence => true
+  validates :number, :presence => true
+
+  def previous
+    Lesson.where("number < ?", self.number).first
+  end
+
+  def next
+    Lesson.where("number > ?", self.number).first
+  end
 end

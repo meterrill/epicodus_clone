@@ -4,6 +4,7 @@ describe "the add lesson process" do
   it "adds a new lesson" do
     visit lessons_path
     click_on 'Add lesson'
+    fill_in 'Number', :with => '1'
     fill_in 'Name', :with => 'New Lesson'
     fill_in 'Text', :with => 'Lorem ipsum'
     click_on 'Create Lesson'

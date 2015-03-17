@@ -5,6 +5,8 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @prev = @lesson.previous
+    @next = @lesson.next
   end
 
   def new
@@ -22,6 +24,6 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:name, :text)
+    params.require(:lesson).permit(:name, :text, :number)
   end
 end

@@ -3,3 +3,9 @@
 <p><%= @lesson.text %></p>
 
 <p><%= link_to "Return to lessons", lessons_path %></p>
+
+<%= link_to("Previous Lesson", @prev) if @prev %>
+<%= link_to("Next Lesson", @next) if @next %>
+
+<%= link_to("Previous Lesson", lesson_path(@prev)) if @prev %>
+<%= link_to("Next Lesson", @next) if @next %>
